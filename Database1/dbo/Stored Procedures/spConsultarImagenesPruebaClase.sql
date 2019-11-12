@@ -7,7 +7,7 @@ Set Nocount On
 
 Select	/*'NO SELECCIONADO' As accn,*/	nmbre_imgn,	cnsctvo_imgn,	rta_fnl_imgn+Convert(Varchar(3),cnsctvo_imgn)+Ltrim(Rtrim(extnsn_imgn)) As rta_imgn
 From	tbimagenesindexadas
-Where	crtla = 'N'
+Where	crtla = 'N' and Not(Not(crtla = 'N'))
 
 
 
