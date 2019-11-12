@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [qvisionelg]
+    WITH PASSWORD = N'xpyuxZppibskiUH{.Exxs9z|msFT7_&#$!~<bPtyhn8d}eiq', SID = 0x28729E0937839041A18FB1DF947FE040, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

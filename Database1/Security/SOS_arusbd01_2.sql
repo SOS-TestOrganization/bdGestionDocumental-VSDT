@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [SOS\arusbd01]
+    AUTHORIZATION [SOS\arusbd01];
+

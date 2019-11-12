@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\310008 Auditor Salud]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

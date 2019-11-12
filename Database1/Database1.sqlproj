@@ -1,0 +1,851 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Database1</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{21b494f7-c719-494d-99a4-cbd6918c28c6}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Database1</RootNamespace>
+    <AssemblyName>Database1</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <PermissionSet>UNSAFE</PermissionSet>
+    <IncludeSchemaNameInFileName>False</IncludeSchemaNameInFileName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Storage\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="guest\" />
+    <Folder Include="guest\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="Assemblies\" />
+    <Folder Include="dbo\Sequences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\tbFlujosxDocumentos.sql" />
+    <Build Include="dbo\Tables\tmpGETIndicesFaltantesxDocumentos.sql" />
+    <Build Include="dbo\Tables\tbEstadosDocumento.sql" />
+    <Build Include="dbo\Tables\tbIteracionesxFlujoDocumentos.sql" />
+    <Build Include="dbo\Tables\tbTiposValidacion.sql" />
+    <Build Include="dbo\Tables\tmpCierreAdministrativo.sql" />
+    <Build Include="dbo\Tables\tbBolsas.sql" />
+    <Build Include="dbo\Tables\tbactuanotificacion.sql" />
+    <Build Include="dbo\Tables\tbTiposValidacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbafiliadosMarcados.sql" />
+    <Build Include="dbo\Tables\tbDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Tables\tbCTCRecobro.sql" />
+    <Build Include="dbo\Tables\tmpAjusteDatosVarios.sql" />
+    <Build Include="dbo\Tables\tbTemporalCargaRegistros.sql" />
+    <Build Include="dbo\Tables\tmpListadoAdjuntos20170623.sql" />
+    <Build Include="dbo\Tables\tbFlujosxTipoDocumentos.sql" />
+    <Build Include="dbo\Tables\tbIndicesxDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Tables\tbRutas.sql" />
+    <Build Include="dbo\Tables\tbEntrepanos.sql" />
+    <Build Include="dbo\Tables\tbIteraciones_Vigencias.sql" />
+    <Build Include="dbo\Tables\Formularios20100331.sql" />
+    <Build Include="dbo\Tables\tbUbicacionDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Tables\tbCRRadicacionEventoRecobrable.sql" />
+    <Build Include="dbo\Tables\tbImagenesSoporteAutoliquidacion.sql" />
+    <Build Include="dbo\Tables\tbInformacionConsecutivo.sql" />
+    <Build Include="dbo\Tables\tbCotizantesImagenesSinva.sql" />
+    <Build Include="dbo\Tables\tbImagenesSoporteRezago.sql" />
+    <Build Include="dbo\Tables\tbLogProcesosCargaImagenes.sql" />
+    <Build Include="dbo\Tables\tbTiposNumeroRadicacion.sql" />
+    <Build Include="dbo\Tables\tbResultadoEjecucion.sql" />
+    <Build Include="dbo\Tables\tbImagenesSoporteNotificacion_0805.sql" />
+    <Build Include="dbo\Tables\tbProcesos.sql" />
+    <Build Include="dbo\Tables\tmpICMDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Tables\tbFlujos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbHistoricoNumeroRadicacion.sql" />
+    <Build Include="dbo\Tables\tmpICMIndicesxDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Tables\tbImagenesSoporteFactura.sql" />
+    <Build Include="dbo\Tables\tbImagenesSoporteFichas.sql" />
+    <Build Include="dbo\Tables\tmpICMImagenesxDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Tables\tbImagenesSoporteNotificacion.sql" />
+    <Build Include="dbo\Tables\tbIndicesxImagenesDigitalizadas.sql" />
+    <Build Include="dbo\Tables\tbasd.sql" />
+    <Build Include="dbo\Tables\tmpICMIndicesxImagenesDigitalizadas.sql" />
+    <Build Include="dbo\Tables\tbUsuariosAutorizadosxTipoDocumento.sql" />
+    <Build Include="dbo\Tables\tbCondiciones.sql" />
+    <Build Include="dbo\Tables\tmpindicesduplicados.sql" />
+    <Build Include="dbo\Tables\tmp_IndicesRestaurar.sql" />
+    <Build Include="dbo\Tables\tbDetalleCondiciones.sql" />
+    <Build Include="dbo\Tables\tmp1.sql" />
+    <Build Include="dbo\Tables\sysdtslog90.sql" />
+    <Build Include="dbo\Tables\tmp2doc.sql" />
+    <Build Include="dbo\Tables\tbUsuarios.sql" />
+    <Build Include="dbo\Tables\tmpindxdoc.sql" />
+    <Build Include="dbo\Tables\tbEstadosDocumento_Vigencias.sql" />
+    <Build Include="dbo\Tables\tmpIndxImag.sql" />
+    <Build Include="dbo\Tables\tbTiposDocumento_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbRegistrosGestionxContacto.sql" />
+    <Build Include="dbo\Tables\tbResponsablesxRuta.sql" />
+    <Build Include="dbo\Tables\tbTiposNumeroRadicacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbListaImagenes1.sql" />
+    <Build Include="dbo\Tables\tbRutasxFlujosDocumentos.sql" />
+    <Build Include="dbo\Tables\tbIncidenciasTablas.sql" />
+    <Build Include="dbo\Tables\tbTiposErrorLog_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposImagenes.sql" />
+    <Build Include="dbo\Tables\tbCampos.sql" />
+    <Build Include="dbo\Tables\tbTiposErrorLog.sql" />
+    <Build Include="dbo\Tables\tbAgrupadoresTiposImagen.sql" />
+    <Build Include="dbo\Tables\tbDigitalizadores.sql" />
+    <Build Include="dbo\Tables\tbAgrupadoresTiposImagen_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbResultadoEjecucion_tmp.sql" />
+    <Build Include="dbo\Tables\tbAgrupadoresTiposImagenxTiposImagenes.sql" />
+    <Build Include="dbo\Tables\tbAgrupadoresTiposImagenxTiposImagenes_Vigencias.sql" />
+    <Build Include="dbo\Tables\Destino de OLE DB.sql" />
+    <Build Include="dbo\Tables\tbImagenesxDocumentosDigitalizadosTest.sql" />
+    <Build Include="dbo\Tables\tbEstructurasArbolVisor.sql" />
+    <Build Include="dbo\Tables\tmpFormulariosAfiliado.sql" />
+    <Build Include="dbo\Tables\tmpDocDigitlizadosServiciosRecibidos.sql" />
+    <Build Include="dbo\Tables\tbEstructurasArbolVisor_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCriteriosConsultas.sql" />
+    <Build Include="dbo\Tables\tbdatosctc.sql" />
+    <Build Include="dbo\Tables\tbCriteriosConsultas_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbDocumentosDigitalizados_lfb.sql" />
+    <Build Include="dbo\Tables\tbImagenesSoporteAfiliacion.sql" />
+    <Build Include="dbo\Tables\tbCamposConsultas.sql" />
+    <Build Include="dbo\Tables\tbFechas.sql" />
+    <Build Include="dbo\Tables\tbTiposDocumental.sql" />
+    <Build Include="dbo\Tables\tbTiposResponsable.sql" />
+    <Build Include="dbo\Tables\tbRutasSio.sql" />
+    <Build Include="dbo\Tables\tmpFormulariosEmpleador.sql" />
+    <Build Include="dbo\Tables\tmpRutasImagenesDigitalizadas.sql" />
+    <Build Include="dbo\Tables\tbCamposConsultas_Vigencias.sql" />
+    <Build Include="dbo\Tables\RutaArchivoServidor.sql" />
+    <Build Include="dbo\Tables\tbTiposDocumental_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposResponsable_Vigencias.sql" />
+    <Build Include="dbo\Tables\tmpRutaArchivoServidor.sql" />
+    <Build Include="dbo\Tables\tbProcesosCargaImagenes.sql" />
+    <Build Include="dbo\Tables\tbCampoConsultaxCriterioConsultas.sql" />
+    <Build Include="dbo\Tables\tbNumeroRadicacion.sql" />
+    <Build Include="dbo\Tables\tbCasosPruebasCTC.sql" />
+    <Build Include="dbo\Tables\tbCampoConsultaxCriterioConsultas_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbProcesosAdministrativos.sql" />
+    <Build Include="dbo\Tables\tbSoportesSolicitudesRecibidas_Copy.sql" />
+    <Build Include="dbo\Tables\tbCriteriosConsultaxOpcion.sql" />
+    <Build Include="dbo\Tables\tbProcesosAdministrativos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbConfiguracionMigracionArchivosIndices.sql" />
+    <Build Include="dbo\Tables\tbEstadosxDocumentos.sql" />
+    <Build Include="dbo\Tables\tbCriteriosConsultaxOpcion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tmpCTCResultadosSoportesParaGeneracionIndices.sql" />
+    <Build Include="dbo\Tables\tmpConsecutivosDocumentosxContactos.sql" />
+    <Build Include="dbo\Tables\tbRadicacionCuentas.sql" />
+    <Build Include="dbo\Tables\tbResponsablesRutasxFlujos.sql" />
+    <Build Include="dbo\Tables\tbResponsablesxProcesosAdministrativos.sql" />
+    <Build Include="dbo\Tables\tbTiposDocumento.sql" />
+    <Build Include="dbo\Tables\tbTiposImagenes_Vigencias.sql" />
+    <Build Include="dbo\Tables\tmpAsociarImagenesaRecobros.sql" />
+    <Build Include="dbo\Tables\tbLogValidaciones.sql" />
+    <Build Include="dbo\Tables\tbDocumentos.sql" />
+    <Build Include="dbo\Tables\tmpComunicadosRecobros.sql" />
+    <Build Include="dbo\Tables\tbAgrupadorTiposDocumental.sql" />
+    <Build Include="dbo\Tables\tbTiposIndices.sql" />
+    <Build Include="dbo\Tables\tbImagenesSoporteFactura_faltante.sql" />
+    <Build Include="dbo\Tables\tbRegistrosGestionxDocumento.sql" />
+    <Build Include="dbo\Tables\tbsinva.sql" />
+    <Build Include="dbo\Tables\tmpImagenesMyt.sql" />
+    <Build Include="dbo\Tables\tbContactos.sql" />
+    <Build Include="dbo\Tables\tbTiposIndicesxTiposDocumentos.sql" />
+    <Build Include="dbo\Tables\tmparchivo.sql" />
+    <Build Include="dbo\Tables\tbComentariosDocumentos.sql" />
+    <Build Include="dbo\Tables\tbTiposFlujo_Vigencias.sql" />
+    <Build Include="dbo\Tables\tmpListadoAdjuntos.sql" />
+    <Build Include="dbo\Tables\tmp2.sql" />
+    <Build Include="dbo\Tables\tbDocumentosAnexosResponde.sql" />
+    <Build Include="dbo\Tables\tbProcedimientosValidacionxTipoDocumento.sql" />
+    <Build Include="dbo\Tables\tbContactosResponde.sql" />
+    <Build Include="dbo\Tables\tmpListadoAdjuntosXpan.sql" />
+    <Build Include="dbo\Tables\tbTiposFlujo.sql" />
+    <Build Include="dbo\Tables\tbAgrupadorTiposDocumental_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbtemporal_sislbr01.sql" />
+    <Build Include="dbo\Tables\tbFlujos.sql" />
+    <Build Include="dbo\Tables\tmpListadoAdjuntosX.sql" />
+    <Build Include="dbo\Tables\tbListaImagenes.sql" />
+    <Build Include="dbo\Tables\tmpImagenesxDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Tables\tmpforemp.sql" />
+    <Build Include="dbo\Tables\tmpTemporalCruceFormulariosGD.sql" />
+    <Build Include="dbo\Tables\tbParametrosGeneralesxProceso.sql" />
+    <Build Include="dbo\Tables\tbDatosFinalesConsultaFormularios.sql" />
+    <Build Include="dbo\Tables\tbGdCorregirRutaImagenesRecobro.sql" />
+    <Build Include="dbo\Tables\tbFlujos_Vigencias_old.sql" />
+    <Build Include="dbo\Tables\tbParametrosGenerales.sql" />
+    <Build Include="dbo\Tables\tbParametrosGeneralesxProceso_vigente.sql" />
+    <Build Include="dbo\Tables\tbAgrupadoresTiposDocumetoxTiposDocumento_Vigencia.sql" />
+    <Build Include="dbo\Tables\tbGdCorregirRutaImagenesRecobro_vigencias.sql" />
+    <Build Include="dbo\Tables\tbParametrosGenerales_Vigencias.sql" />
+    <Build Include="dbo\Tables\tmpCierreContactos.sql" />
+    <Build Include="dbo\Tables\tbTiposParametrosImagenesxProceso.sql" />
+    <Build Include="dbo\Tables\tbImagenesIndexadas.sql" />
+    <Build Include="dbo\Tables\tbTiposParametrosImagenesxProceso_vigente.sql" />
+    <Build Include="dbo\Tables\tbIteraciones.sql" />
+    <Build Include="dbo\Tables\tmpProceso.sql" />
+    <Build Include="dbo\Tables\tbtemporal.sql" />
+    <Build Include="dbo\Tables\tbNombresCamposIndicesProveedor.sql" />
+    <Build Include="dbo\Tables\tbNombresCamposIndicesProveedor_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTmpConfiguracionMigracionArchivosIndices.sql" />
+    <Build Include="dbo\Tables\tbIteracionesxFlujo.sql" />
+    <Build Include="dbo\Tables\tbNombresCamposIndicesProveedorxTipoDocumento.sql" />
+    <Build Include="dbo\Tables\tbRegistrosArchivosIndices.sql" />
+    <Build Include="dbo\Tables\tbDocumentosDigitalizados_om.sql" />
+    <Build Include="dbo\Tables\tbPasos.sql" />
+    <Build Include="dbo\Tables\tbFlujosxTipoFlujo.sql" />
+    <Build Include="dbo\Tables\tbImagenesSio.sql" />
+    <Build Include="dbo\Tables\tbTiposImagenesxTiposDocumento.sql" />
+    <Build Include="dbo\Tables\tbImagenesxDocumentosDigitalizados_om.sql" />
+    <Build Include="dbo\Tables\tbMultiImagenesxDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Tables\tbBodegas.sql" />
+    <Build Include="dbo\Tables\tbTmpRegistrosArchivosIndicesxTemporal.sql" />
+    <Build Include="dbo\Tables\tbFlujosxAreas.sql" />
+    <Build Include="dbo\Tables\tbInfoFormulariosSio.sql" />
+    <Build Include="dbo\Tables\tbTemporalRegistrosIndicesAgrupados.sql" />
+    <Build Include="dbo\Tables\tbIndicesxDocumentosDigitalizados_om.sql" />
+    <Build Include="dbo\Tables\tbEstanterias.sql" />
+    <Build Include="dbo\Tables\tbImagenesxDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Tables\tmpGETDocumentosFaltantesXIndices.sql" />
+    <Build Include="dbo\Tables\tbParametrosProgramacionxTiposIndices.sql" />
+    <Build Include="dbo\Tables\tbIndicesxImagenesDigitalizadas_om.sql" />
+    <Build Include="dbo\Tables\tbCajas.sql" />
+    <Build Include="Storage\FG_INDEXES.sql" />
+    <Build Include="Storage\FG_TBIMAGENESXDOCUMENTOSDIGITALIZADOS_01.sql" />
+    <Build Include="Storage\FG_TBIMAGENESXDOCUMENTOSDIGITALIZADOS_02.sql" />
+    <Build Include="Storage\FG_TBIMAGENESXDOCUMENTOSDIGITALIZADOS_03.sql" />
+    <Build Include="Security\Administrador Gestion Documental.sql" />
+    <Build Include="Security\Consultor Gestion Documental.sql" />
+    <Build Include="Security\Gestion Documental Web.sql" />
+    <Build Include="Security\Administrador Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Jefaturas Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor General Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Web Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Kiosko Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Atencion al Cliente.sql" />
+    <Build Include="Security\Liquidador Recobros.sql" />
+    <Build Include="Security\Coordinador Parametros Recobro.sql" />
+    <Build Include="Security\Administrador Digitalizadores Gestion Documental .sql" />
+    <Build Include="Security\Consultor Asesor Comercial.sql" />
+    <Build Include="Security\Consultor Salud.sql" />
+    <Build Include="Security\Administrador Gestion IT.sql" />
+    <Build Include="Security\Analista Gestion IT.sql" />
+    <Build Include="Security\Jefatura Gestion IT.sql" />
+    <Build Include="Security\Auxiliar Sipres Analista Notificaciones.sql" />
+    <Build Include="Security\Auxiliar de Prestaciones Medicas.sql" />
+    <Build Include="Security\Coordinador de Prestaciones Medicas.sql" />
+    <Build Include="Security\Validador de Prestaciones Medicas.sql" />
+    <Build Include="Security\Analista Seguros Asistenciales.sql" />
+    <Build Include="Security\Auditor Salud.sql" />
+    <Build Include="Security\Autorizadora Notificacion.sql" />
+    <Build Include="Security\Auditoria Interna Salud.sql" />
+    <Build Include="Security\Consultor Novedades Servicio al Cliente.sql" />
+    <Build Include="Security\Auxiliar Prestaciones Medicas y Validacion de Derechos.sql" />
+    <Build Include="Security\Auditoria Interna.sql" />
+    <Build Include="Security\Administrador Notificaciones Atep SOA.sql" />
+    <Build Include="Security\Autorizador Validacion Servicio al Cliente.sql" />
+    <Build Include="Security\Administrador Planeacion Gestion IT.sql" />
+    <Build Include="Security\Consultor Salud Privilegiado.sql" />
+    <Build Include="Security\Coordinador Parametros Vision Salud.sql" />
+    <Build Include="Security\Administrador Red Gestion IT.sql" />
+    <Build Include="Security\Administrador Salud Gestion IT.sql" />
+    <Build Include="Security\Coordinador Parametros Red Salud.sql" />
+    <Build Include="Security\Auxiliar Parametros Red Salud.sql" />
+    <Build Include="Security\Aprendiz Red de Servicios Red Salud.sql" />
+    <Build Include="Security\Administrador Juridico Gestion IT.sql" />
+    <Build Include="Security\Consultor Cuentas Medicas Red Salud.sql" />
+    <Build Include="Security\Consultor Auxiliar Sedes Red Salud.sql" />
+    <Build Include="Security\Prestaciones Economicas.sql" />
+    <Build Include="Security\Auditor Interno Red Salud.sql" />
+    <Build Include="Security\RespondeService.sql" />
+    <Build Include="Security\Consultor Administrativo.sql" />
+    <Build Include="Security\Consultor Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Asesor Cartera.sql" />
+    <Build Include="Security\Consultor Coordinador Comercial.sql" />
+    <Build Include="Security\Consultor Comercial Privilegiado.sql" />
+    <Build Include="Security\Consultor Administrativo Novedades.sql" />
+    <Build Include="Security\Consultor Administrativo Privilegiado.sql" />
+    <Build Include="Security\Consultor Administrador.sql" />
+    <Build Include="Security\KioskoCer.sql" />
+    <Build Include="Security\Coordinador Juridico Notificaciones.sql" />
+    <Build Include="Security\Consultor Recobros.sql" />
+    <Build Include="Security\Consultor de Cuentas Medicas.sql" />
+    <Build Include="Security\Liquidador Facturas.sql" />
+    <Build Include="Security\Radicador de Cuentas Medicas.sql" />
+    <Build Include="Security\Coordinador Cuentas Medicas.sql" />
+    <Build Include="Security\portal_rol.sql" />
+    <Build Include="Security\Auditor Interno de Cuentas Medicas.sql" />
+    <Build Include="Security\autsalud_rol.sql" />
+    <Build Include="Security\visosservice_role.sql" />
+    <Build Include="Security\Auditor Autorizador CNA.sql" />
+    <Build Include="Security\800008 Administrador Captacion Ingresos.sql" />
+    <Build Include="Security\SOS_800008 Administrador Captacion Ingresos.sql" />
+    <Build Include="Security\sisweb01.sql" />
+    <Build Include="Security\siscgm01.sql" />
+    <Build Include="Security\GestionDocumental.sql" />
+    <Build Include="Security\GestionDocumental_1.sql" />
+    <Build Include="Security\960001 Administrador Gestion Documental.sql" />
+    <Build Include="Security\960002 Consultor Gestion Documental.sql" />
+    <Build Include="Security\970001 Administrador Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970001 Administrador Servicio al Cliente.sql" />
+    <Build Include="Security\970003 Consultor Jefaturas Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970003 Consultor Jefaturas Servicio al Cliente.sql" />
+    <Build Include="Security\970004 Consultor General Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970004 Consultor General Servicio al Cliente.sql" />
+    <Build Include="Security\970005 Consultor Web Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970005 Consultor Web Servicio al Cliente.sql" />
+    <Build Include="Security\970006 Consultor Kiosko Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970006 Consultor Kiosko Servicio al Cliente.sql" />
+    <Build Include="Security\970007 Consultor Atencion al Cliente.sql" />
+    <Build Include="Security\SOS_970007 Consultor Atencion al Cliente.sql" />
+    <Build Include="Security\340007 Coordinador Parametros Recobro.sql" />
+    <Build Include="Security\340011 Liquidador Recobros.sql" />
+    <Build Include="Security\SOS_340011 Liquidador Recobros.sql" />
+    <Build Include="Security\ServicioClientePortal.sql" />
+    <Build Include="Security\Analistas.sql" />
+    <Build Include="Security\SOS_Analistas.sql" />
+    <Build Include="Security\960003 Administrador Digitalizadores Gestion Documental.sql" />
+    <Build Include="Security\SOS_960003 Administrador Digitalizadores Gestion Documental.sql" />
+    <Build Include="Security\900005 Consultor Asesor Comercial.sql" />
+    <Build Include="Security\SOS_900005 Consultor Asesor Comercial.sql" />
+    <Build Include="Security\310009 Autorizadora Notificacion.sql" />
+    <Build Include="Security\SOS_310009 Autorizadora Notificacion.sql" />
+    <Build Include="Security\Unibase.sql" />
+    <Build Include="Security\310007 Analista Seguros Asistenciales.sql" />
+    <Build Include="Security\310004 Consultor Salud.sql" />
+    <Build Include="Security\310008 Auditor Salud.sql" />
+    <Build Include="Security\SOS_310008 Auditor Salud.sql" />
+    <Build Include="Security\980001 Administrador Gestion IT.sql" />
+    <Build Include="Security\980002 Analista Gestion IT.sql" />
+    <Build Include="Security\SOS_980002 Analista Gestion IT.sql" />
+    <Build Include="Security\980003 Jefatura Gestion IT.sql" />
+    <Build Include="Security\Usuario3047.sql" />
+    <Build Include="Security\310010 Auxiliar Sipres Analista Notificaciones.sql" />
+    <Build Include="Security\310001 Auxiliar de Prestaciones Medicas.sql" />
+    <Build Include="Security\310002 Coordinador de Prestaciones Medicas.sql" />
+    <Build Include="Security\310003 Validador de Prestaciones Medicas.sql" />
+    <Build Include="Security\310011 Auditoria Interna Salud.sql" />
+    <Build Include="Security\970008 Consultor Novedades Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970008 Consultor Novedades Servicio al Cliente.sql" />
+    <Build Include="Security\310014 Auxiliar Prestaciones Medicas y Validacion de Derechos.sql" />
+    <Build Include="Security\700004 Auditoria Interna.sql" />
+    <Build Include="Security\Atep_Soa.sql" />
+    <Build Include="Security\Atep_Soa_1.sql" />
+    <Build Include="Security\310016 Administrador Notificaciones Atep SOA.sql" />
+    <Build Include="Security\970009 Autorizador Validacion Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970009 Autorizador Validacion Servicio al Cliente.sql" />
+    <Build Include="Security\980006 Administrador Planeacion Gestion IT.sql" />
+    <Build Include="Security\SOS_980006 Administrador Planeacion Gestion IT.sql" />
+    <Build Include="Security\900009 Consultor Salud Privilegiado.sql" />
+    <Build Include="Security\SOS_900009 Consultor Salud Privilegiado.sql" />
+    <Build Include="Security\300001 Coordinador Parametros Vision Salud.sql" />
+    <Build Include="Security\980007 Administrador Red Gestion IT.sql" />
+    <Build Include="Security\980005 Administrador Salud Gestion IT.sql" />
+    <Build Include="Security\SOS_380001 Coordinador Parametros RedSalud.sql" />
+    <Build Include="Security\SOS_380002 Auxiliar Parametros Red Salud.sql" />
+    <Build Include="Security\380005 Aprendiz Red de Servicios Red Salud.sql" />
+    <Build Include="Security\980008 Administrador Juridico Gestion IT.sql" />
+    <Build Include="Security\380004 Consultor Cuentas Medicas Red Salud.sql" />
+    <Build Include="Security\380006 Consultor Auxiliar Sedes Red Salud.sql" />
+    <Build Include="Security\pe_soa.sql" />
+    <Build Include="Security\pe_soa_1.sql" />
+    <Build Include="Security\380003 Auditor Interno Red Salud.sql" />
+    <Build Include="Security\respondews.sql" />
+    <Build Include="Security\respondews_1.sql" />
+    <Build Include="Security\900001 Consultor Administrativo.sql" />
+    <Build Include="Security\SOS_900001 Consultor Administrativo.sql" />
+    <Build Include="Security\900002 Consultor Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_900002 Consultor Servicio al Cliente.sql" />
+    <Build Include="Security\900003 Consultor Asesor Cartera.sql" />
+    <Build Include="Security\SOS_900003 Consultor Asesor Cartera.sql" />
+    <Build Include="Security\900004 Consultor Coordinador Comercial.sql" />
+    <Build Include="Security\SOS_900004 Consultor Coordinador Comercial.sql" />
+    <Build Include="Security\900006 Consultor Comercial Privilegiado.sql" />
+    <Build Include="Security\SOS_900006 Consultor Comercial Privilegiado.sql" />
+    <Build Include="Security\900007 Consultor Administrativo Novedades.sql" />
+    <Build Include="Security\SOS_900007 Consultor Administrativo Novedades.sql" />
+    <Build Include="Security\900008 Consultor Salud.sql" />
+    <Build Include="Security\SOS_900008 Consultor Salud.sql" />
+    <Build Include="Security\900010 Consultor Administrativo Privilegiado.sql" />
+    <Build Include="Security\SOS_900010 Consultor Administrativo Privilegiado.sql" />
+    <Build Include="Security\900011 Consultor Administrador.sql" />
+    <Build Include="Security\SOS_900011 Consultor Administrador.sql" />
+    <Build Include="Security\Kiosko.sql" />
+    <Build Include="Security\Kiosko_1.sql" />
+    <Build Include="Security\310012 Coordinador Juridico Notificaciones.sql" />
+    <Build Include="Security\340014 Consultor Recobros.sql" />
+    <Build Include="Security\sisala01.sql" />
+    <Build Include="Security\rcbrs_usr.sql" />
+    <Build Include="Security\rcbrs_usr_1.sql" />
+    <Build Include="Security\330007 Liquidador Facturas.sql" />
+    <Build Include="Security\330001 Coordinador Cuentas Medicas.sql" />
+    <Build Include="Security\330004 Radicador de Cuentas Medicas.sql" />
+    <Build Include="Security\310018 Auditor Salud Central.sql" />
+    <Build Include="Security\ctc_webusr.sql" />
+    <Build Include="Security\ctc_webusr_1.sql" />
+    <Build Include="Security\330008 Auditor Interno de Cuentas Medicas.sql" />
+    <Build Include="Security\SOS_330008 Auditor Interno de Cuentas Medicas.sql" />
+    <Build Include="Security\SOS_310015 Auxiliar de Prestaciones Centelsa.sql" />
+    <Build Include="Security\SOS_geniarjcv.sql" />
+    <Build Include="Security\SOS_geniarjcv_1.sql" />
+    <Build Include="Security\SOS_geniarjcv01.sql" />
+    <Build Include="Security\SOS_ctmggc01.sql" />
+    <Build Include="Security\portal_webusr.sql" />
+    <Build Include="Security\portal_webusr_1.sql" />
+    <Build Include="Security\websos.sql" />
+    <Build Include="Security\websos_1.sql" />
+    <Build Include="Security\quickweb.sql" />
+    <Build Include="Security\quickweb_1.sql" />
+    <Build Include="Security\quick_webusr.sql" />
+    <Build Include="Security\quick_webusr_1.sql" />
+    <Build Include="Security\autsalud_webusr.sql" />
+    <Build Include="Security\autsalud_webusr_1.sql" />
+    <Build Include="Security\seitdlm.sql" />
+    <Build Include="Security\seitdlm_1.sql" />
+    <Build Include="Security\visosservice_webusr.sql" />
+    <Build Include="Security\visosservice_webusr_1.sql" />
+    <Build Include="Security\glosasapp_usr.sql" />
+    <Build Include="Security\glosasapp_usr_1.sql" />
+    <Build Include="Security\SOS_qvisionsg.sql" />
+    <Build Include="Security\SOS_qvisionsg_1.sql" />
+    <Build Include="Security\SOS_qvisionygl.sql" />
+    <Build Include="Security\SOS_qvisionygl_1.sql" />
+    <Build Include="Security\qvisionjdr.sql" />
+    <Build Include="Security\qvisionjdr_1.sql" />
+    <Build Include="Security\cna_webusr.sql" />
+    <Build Include="Security\cna_webusr_1.sql" />
+    <Build Include="Security\SOS_sqlsrvc_prb.sql" />
+    <Build Include="Security\SOS_sqlsrvc_prb_1.sql" />
+    <Build Include="Security\premizeyrr.sql" />
+    <Build Include="Security\qvisionjpv.sql" />
+    <Build Include="Security\premize.sql" />
+    <Build Include="Security\premize_1.sql" />
+    <Build Include="Security\310019 Auditor Autorizador CNA.sql" />
+    <Build Include="Security\SOS_310019 Auditor Autorizador CNA.sql" />
+    <Build Include="Security\geniarhrt.sql" />
+    <Build Include="Security\geniarhrt_1.sql" />
+    <Build Include="Security\sisvrd01.sql" />
+    <Build Include="Security\sisvrd01_1.sql" />
+    <Build Include="Security\qvisionelg.sql" />
+    <Build Include="Security\qvisionelg_1.sql" />
+    <Build Include="Security\SOS_arusbd01.sql" />
+    <Build Include="Security\SOS_arusbd01_1.sql" />
+    <Build Include="Security\suit_webusr.sql" />
+    <Build Include="Security\suit_webusr_1.sql" />
+    <Build Include="Security\SOS_sqlprdtest.sql" />
+    <Build Include="Security\SOS_sqlprdtest_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\fnGDCCalcularDireccionConFecha.sql" />
+    <Build Include="dbo\Functions\fnRecuperaRutaExacta.sql" />
+    <Build Include="dbo\Functions\fnTiemposMaximosRuta.sql" />
+    <Build Include="dbo\Functions\fnCorregirRutaImagenesRecobro_pruebas.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnGDCalcularTipoDocumentalxTipoDocumento.sql" />
+    <Build Include="dbo\Functions\fnValidarExisteArchivo.sql" />
+    <Build Include="dbo\Functions\fnGDRecuperarNombreImagen.sql" />
+    <Build Include="dbo\Functions\fn_Devuelve_Abreviatura_Mes.sql" />
+    <Build Include="dbo\Functions\fn_Devuelve_Dia_Completo.sql" />
+    <Build Include="dbo\Functions\fnGDCCalcularDireccionArchivoIndice19032009.sql" />
+    <Build Include="dbo\Functions\fnCorregirRutaImagenesRecobro.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnGDCCalcularDireccionArchivoIndice.sql" />
+    <Build Include="dbo\Functions\fnGDCCalcularDireccionArchivoFisico.sql" />
+    <Build Include="dbo\Functions\fnGDCCalcularDireccionArchivoFisico19032009.sql" />
+    <Build Include="dbo\Functions\SplitString.sql" />
+    <Build Include="dbo\Functions\splitstring2.sql" />
+    <Build Include="dbo\Stored Procedures\spInsertarImagenesAdicionalesGlosa.sql" />
+    <Build Include="guest\Stored Procedures\spGDHomologarConsecutivoSedeIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarCargaFallidaDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGETInsertarIndicesFaltanteDocumetosSoportes.sql" />
+    <Build Include="dbo\Stored Procedures\spGDHomologarConsecutivoSedeIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTotalDocumentosCargados.sql" />
+    <Build Include="dbo\Stored Procedures\spGETMigraDocumetosSoportesFaltanteIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraeParametrosProgramacionxTiposIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spGDIngresarDocumentoAnexoRespondeWeb.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaDocumentosCuentasMedicas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDCalcularIteracionxFlujoDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraerCamposCriterioMejorado.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraerCiudades.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarDocumentoWeb.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDetalleFlujosxDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDocumentosVisorCuentasMedicas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraerDepartamentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarBolsas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarIteracionxDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spASConsultarListaTiposIndices.sql" />
+    <Build Include="dbo\Stored Procedures\TestVisor.sql" />
+    <Build Include="dbo\Stored Procedures\sppruebaclase.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarBodegas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDValidarFlujoDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaVisorImagenes1FOX.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarCajas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposImagenesxTipoDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarFlujosxDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDActualizarProcesoCargaImagen.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarCiudades.sql" />
+    <Build Include="dbo\Stored Procedures\spCARecuperarInformacionDigitalizador.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarEstanterias.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposIdentificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDBuscarCiudad.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarImagenesFacturasRecobrosMyt_pruebas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarUsuariosxGrupos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarCamposArchivoIndice.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarFlujosxTipoDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\SpCRConsultaImagenesDigitalizadasSOS.sql" />
+    <Build Include="dbo\Stored Procedures\SpEjecutaDTS_cmdshell_GD.sql" />
+    <Build Include="dbo\Stored Procedures\spCARecuperarConsecutivoDigitalizador.sql" />
+    <Build Include="dbo\Stored Procedures\spCARecuperarTiposDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerTiposPrestador.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCAConsultarArchivoCargado.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarEntrepanos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGenerarTemporalRegistrosIndicesAgrupados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTemporalGenerarImagenesAfiliacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDAnexarDocumentoRespondeWebService.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultarImagenesxResponsable.sql" />
+    <Build Include="dbo\Stored Procedures\spCARecuperarCamposArchivoIndice.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarAnexosResponde.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarImagenesVFP.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDocumentosAnexosTutelas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarUbicacionDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentosAnexosTUTELA.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarInfoDocumentosRecobrosMasivos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDDuplicarDocumentoDigitalizado.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDocumentosIndexados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarIndicesDocumentoEspecifico.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDetalleGestionDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDIngresarDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spVUConsultarSoportesAfiliacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDCalcularConsecutivo.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarIndicesDocumentoxTipoDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarGestionDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spVUTraerBasesDatosSoportesAfiliacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDocumentosxFlujo.sql" />
+    <Build Include="dbo\Stored Procedures\spGDCalcularConsecutivoDocumentoDigitalizado.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarGestionxDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spVUTraerNombresContratoSoportesAfiliacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDCalcularConsecutivoImagenDigitalizada.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarConfiguracionMigracionArchivosIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentoDigitalizadoxRegistrosIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spVUTraerTiposDocumentoSoportesAfiliacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarFlujos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDCalcularConsecutivosImagenesDigitalizadas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarLogProcesosCargaImagen.sql" />
+    <Build Include="dbo\Stored Procedures\spVUConsultarSoportesAutoliquidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDActualizarNombreArchivosFormularios.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarAsociacionFlujoDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarRegistrosArchivosIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaDocumentosAfiliacionCU.sql" />
+    <Build Include="dbo\Stored Procedures\spGDIngresarEstadoxDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spVUTraerBasesDatosSoportesAutoliquidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoDocumentosAfiliacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDIngresarNumeroRadicacion.sql" />
+    <Build Include="dbo\Stored Procedures\spVUTraerTiposSoportesAutoliquidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarUbicacionFisicaDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spVUConsultarSoportesRezago.sql" />
+    <Build Include="dbo\Stored Procedures\spGDInvalidarDocumentosdigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaDetalleDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarNumeroRadicacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGenerarTemporalRegistrosIndicesAgrupados_Borrar.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarRelacionDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarImagenxDocumentosDigitalizado.sql" />
+    <Build Include="dbo\Stored Procedures\spVUConsultarSoportesFactura.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarIndicexDocumentoDigitalizado.sql" />
+    <Build Include="dbo\Stored Procedures\spVUTraerTiposDocumentoSoportesFactura.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDetalleDocumentosxRuta.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarIndicexImagenDigitalizada.sql" />
+    <Build Include="dbo\Stored Procedures\spVUConsultarSoportesFicha.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarGestionesAdministrativas.sql" />
+    <Build Include="dbo\Stored Procedures\spVUConsultarSoportesNotificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spVUTraerArpsSoportesNotificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spICMCargarIndicesImagenesIntegracion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDliberarDocumentoDigitalizado.sql" />
+    <Build Include="dbo\Stored Procedures\spVUTraerCiudadesSoportesNotificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spEliminarDocumentosDigitalizadosxProceso.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarLogProcesosCargaxDigitalizador.sql" />
+    <Build Include="dbo\Stored Procedures\spVUTraerTiposDocumentoSoportesNotificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarProveeedoresDigitalizacion.sql" />
+    <Build Include="dbo\Stored Procedures\sp_dts_addlogentry.sql" />
+    <Build Include="dbo\Stored Procedures\spSSWAsignacionImgIQRadicados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarImagenesFacturasRecobrosMyt.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarImagenesCuentasMedicas.sql" />
+    <Build Include="dbo\Stored Procedures\spRESConsultarRutaImagenesRecobro.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentosAnexosCTC.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaVisorImagenes.sql" />
+    <Build Include="dbo\Stored Procedures\spMNConsultaTipoDocAnexo.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarDocumentosAnexosCTC.sql" />
+    <Build Include="dbo\Stored Procedures\spRECConsultarRutaImagenesRecobro.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaTiposImagenes.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarResponsablesxRutas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGenerarSentenciasRegistrosIndicesAgrupados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDocumentoDigitalizado.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDocumentosDigitalizadosxIndicesAnexosXML.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarDocumentosAnexosGestionTI.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarNumeroRadicacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDocumentosDigitalizadosxIndicesXML.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentosAnexosGestionTI.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarIndicesxDocumentoDigitalizado.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentosAnexos3047.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarRutaxFlujoDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarIndicesxImagenDigitalizada.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarRutaxFlujoDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarDocumentoDigitalizado.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposImagenes.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarImagenesxDocumentoDigitalizado.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarConsolidadoImagenesxTipoDocumental.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGenerarRutaImagenes.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDatosInformesFormularios.sql" />
+    <Build Include="dbo\Stored Procedures\spGDActualizarImagenesXDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarRegistrosArchivosIndicesxTemporal.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarProcesosCargaxDigitalizador.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarRutasxPaso.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraerDirectorioArchivoTemporalModulo.sql" />
+    <Build Include="dbo\Stored Procedures\spGDIngresarIndicexImagenDigitalizada.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaVisorImagenes2FOX.sql" />
+    <Build Include="dbo\Stored Procedures\spGDBorrarDocumentoDigitalizadoxMigracion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGenerarVistaInformeFormularios.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDescripcionFlujo.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaIndicesXTipoDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposIndices.sql" />
+    <Build Include="dbo\Stored Procedures\usp_cretate_drop_contraints.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDetalleRutaxFlujoDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spCompletarInformacionTmpDocDigitalizadosServiciosRecibidos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarOpcionesRutasxCondicion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarImagenesFacturasMasiva.sql" />
+    <Build Include="dbo\Stored Procedures\spGDValidarFacturaMasiva.sql" />
+    <Build Include="dbo\Stored Procedures\spTrasladoRutaCombinadaTmpDocDigitalizadosServiciosRecibidos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDocumentosVisorRecobros.sql" />
+    <Build Include="dbo\Stored Procedures\spVUConsultarSoportesAfiliacionJoin.sql" />
+    <Build Include="dbo\Stored Procedures\spGDVerificarRutaMasivaDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraerParametrosInstruccionInvocarVisorJAVA.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoDocumentosAutoliquidacion.sql" />
+    <Build Include="dbo\Stored Procedures\sp_generate_inserts.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoDocumentosNotificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRetornarSentenciasRegistrosIndicesAgrupados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaDocumentosTutelas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoDocumentosCuentasMedicas.sql" />
+    <Build Include="dbo\Stored Procedures\spTrasladoInformacionTmpDocDigitalizadosServiciosRecibidos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaVisorImagenes2FOX_sislbr01.sql" />
+    <Build Include="dbo\Stored Procedures\spTrasladoActualizaRutaArchivos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposDocumental.sql" />
+    <Build Include="dbo\Stored Procedures\spCTCConsultarTiposImagenes.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposDocumentoxTipoDocumental.sql" />
+    <Build Include="dbo\Stored Procedures\sp1.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoDocumentosJuridico.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarDocumentosAnexosRespondeMigracion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarResponsablesxRuta.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperaRutaExacta.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaDocumentosJuridico.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarCabeceraDocumentosAnexosRespondeMigracion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarImagenesFacturasRecobrosMytMasivo.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraerParametrosInstruccionInvocarVisorJAVADinamico.sql" />
+    <Build Include="dbo\Stored Procedures\spGDActualizarCodigoDocumentoResponde.sql" />
+    <Build Include="dbo\Stored Procedures\spCTCMigraInsertarIndicesXSoportes.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarDocumentosAnexosResponde.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoDocumentosResponde.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentosAnexosRespondeMasivo.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentosAnexosResponde.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentosAnexosEP.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarConsolidadoxTipoDocumental.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentosAnexosAT.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultarImagenesPruebaClase.sql" />
+    <Build Include="dbo\Stored Procedures\GetImmediateManager.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarDocumentosAnexosAT.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaImagenesRecobrosFactura.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarDocumentosAnexosResponde.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaDocumentosAfiliacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraerParametrosActivaBotonVisorJAVA.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaImagenesAfiliacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarDocumentosAnexosGestionTI.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaVisorImagenes1.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraerParametrosVisualizarPDFVisorWeb.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarImagenesComunicadosRecobros.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDetalleDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarDocumentosAnexosEP.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaDocumentosNotificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spVUConsultarSoportesNotificacionJoin.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarDocumentosAnexosAT.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaDocumentosAutoliquidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarDocumentosAnexosEP.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarTiposIndicesxTiposDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDValidarDatosFormulariosMasivo.sql" />
+    <Build Include="dbo\Stored Procedures\spVUConsultarSoportesFacturaJoin.sql" />
+    <Build Include="dbo\Stored Procedures\spCRConsultarRutaImagenesRecobro.sql" />
+    <Build Include="dbo\Stored Procedures\spGDActualizarDatosFormulariosMasivo.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarComentarioDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarComentariosDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposDocumentosxAgrupador.sql" />
+    <Build Include="dbo\Stored Procedures\spCTCConsultarRutaImagenesDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\spValidacionICPDigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarProcedimientoValidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEjecutarDTSMigracionArchivosIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentoDigitalizado.sql" />
+    <Build Include="dbo\Stored Procedures\spCTCActualizarRutaImagenesDocumentosDigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\spValidacionNoRecobroDigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEjecutarDTSImportarIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoDocumentosAfiliacionModif.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEjecutarDTSTraspasarRegistrosIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarLogValidacionxProcesoCarga.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarImagenesPrestadoresMasiva.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarFechasDigitalizacionxPrestador.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraerParametroGeneral.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposIndicesxTiposDocumentos.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarDatosInformesFormularios.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarDatosFormulariosxRangoFecha.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarProcesoCargaImagen.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGeneraRutaDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spValidacionATDigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\spObtenerImagenesRecobros.sql" />
+    <Build Include="dbo\Stored Procedures\spValidacionEPDigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\spAsociacionImagenesRadicacionesxEventosCTC.sql" />
+    <Build Include="dbo\Stored Procedures\p_sizetables.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposDocumentosIndexacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarConfiguracionMigracionArchivosIndicess.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarConfiguracionMigracionArchivosIndices.sql" />
+    <Build Include="dbo\Stored Procedures\SpEjecutaDTS_cmdshell.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarTiposFlujo.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGenerarTemporalRegistrosIndicesAgrupados_borrar2.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarFlujoTrabajo.sql" />
+    <Build Include="dbo\Stored Procedures\spGDActualizarImagenCTC.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarRegistrosArchivosIndicesDinamico.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGDInactivarImagenPrincipalCTC.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarIndicesImagenes.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarRegistrosCargadosxDigitalizador.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoCuentasMedicas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDRecuperarNombresCamposIndicesProveedorxTipoDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoNotificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaVisorImagenes2FOX_pruebas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarDocumentosMultiTiff.sql" />
+    <Build Include="dbo\Stored Procedures\spGDTraerTiposImagenes.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoDocumentosPrestacionesEconomicas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDModificarIndicesImagen.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarCantidadRegistrosIndicesInvalidos.sql" />
+    <Build Include="dbo\Stored Procedures\spValidacionFacturasDigitalizadas.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarAsociacionMultiTiffxDocumento.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaDocumentosPrestacionesEconomicas.sql" />
+    <Build Include="dbo\Stored Procedures\spValidacionCTCDigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDEliminarDocumentoAnexoGestionTIWeb.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarFlujosxArea.sql" />
+    <Build Include="dbo\Stored Procedures\spValidacionATEPDigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\spGDIngresarDocumentoAnexoGestionTIWeb.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultarDetalleFlujosxArea.sql" />
+    <Build Include="dbo\Stored Procedures\spGDGrabarProcesoCargaImagen.sql" />
+    <Build Include="dbo\Stored Procedures\spGDConsultaConsolidadoDocumentosAfiliacionPendientes.sql" />
+    <Build Include="dbo\Stored Procedures\spValidacionTutelaDigitalizados.sql" />
+    <Build Include="dbo\Stored Procedures\SampleWSPost.sql" />
+    <Build Include="dbo\User Defined Types\udtApellido.sql" />
+    <Build Include="dbo\User Defined Types\udtCiudad.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigo.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoDiagnostico.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoDocumento.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoIps.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoPrestacion.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoPrestacion2.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoSalud.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoSaludLargo.sql" />
+    <Build Include="dbo\User Defined Types\udtConsecutivo.sql" />
+    <Build Include="dbo\User Defined Types\udtDescripcion.sql" />
+    <Build Include="dbo\User Defined Types\udtDireccion.sql" />
+    <Build Include="dbo\User Defined Types\udtDocumento.sql" />
+    <Build Include="dbo\User Defined Types\udtDocumentoLargo.sql" />
+    <Build Include="dbo\User Defined Types\udtEmail.sql" />
+    <Build Include="dbo\User Defined Types\udtLogico.sql" />
+    <Build Include="dbo\User Defined Types\udtNombre.sql" />
+    <Build Include="dbo\User Defined Types\udtNombreObjeto.sql" />
+    <Build Include="dbo\User Defined Types\udtNumeroFormulario.sql" />
+    <Build Include="dbo\User Defined Types\udtNumeroIdentificacion.sql" />
+    <Build Include="dbo\User Defined Types\udtnumeroidentificacion2.sql" />
+    <Build Include="dbo\User Defined Types\udtNumeroIdentificacionLargo.sql" />
+    <Build Include="dbo\User Defined Types\udtObservacion.sql" />
+    <Build Include="dbo\User Defined Types\udtPeriodo.sql" />
+    <Build Include="dbo\User Defined Types\udtSede.sql" />
+    <Build Include="dbo\User Defined Types\udtSexo.sql" />
+    <Build Include="dbo\User Defined Types\udtTelefono.sql" />
+    <Build Include="dbo\User Defined Types\udtTipoFormulario.sql" />
+    <Build Include="dbo\User Defined Types\udtTipoIdentificacion.sql" />
+    <Build Include="dbo\User Defined Types\udtUsuario.sql" />
+    <Build Include="dbo\User Defined Types\udtValorDecimales.sql" />
+    <Build Include="dbo\User Defined Types\udtValorGrande.sql" />
+    <Build Include="dbo\User Defined Types\udtValorPequeno.sql" />
+    <Build Include="Storage\PF_TBIMAGENESXDOCUMENTOSDIGITALIZADOS.sql" />
+    <Build Include="Storage\PS_TBIMAGENESXDOCUMENTOSDIGITALIZADOS.sql" />
+    <Build Include="Security\SOS_310015 Auxiliar de Prestaciones Centelsa_1.sql" />
+    <Build Include="Security\SOS_arusbd01_2.sql" />
+    <Build Include="dbo\Sequences\seqNumeroEstadoCuentaDIANPruebas.sql" />
+    <Build Include="Security\Permissions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assemblies\StoredProcedures.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="StoredProcedures">
+      <HintPath>Assemblies\StoredProcedures.dll</HintPath>
+      <SqlAssemblyName>SPAssembly</SqlAssemblyName>
+      <IsModelAware>True</IsModelAware>
+      <GenerateSqlClrDdl>False</GenerateSqlClrDdl>
+      <SqlOwnerName>SOS\sqlprdtest</SqlOwnerName>
+      <SqlPermissionSet>UNSAFE</SqlPermissionSet>
+    </Reference>
+  </ItemGroup>
+</Project>

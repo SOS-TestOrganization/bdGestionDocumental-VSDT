@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Atep_Soa]
+    WITH PASSWORD = N'JkhZgbjsapXozk9M#sesei;hmsFT7_&#$!~<PHkkcshe;sgd', SID = 0xE28FA9BE641AE248ABF7866253A387F9, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

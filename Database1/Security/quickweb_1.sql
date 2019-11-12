@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [quickweb]
+    WITH PASSWORD = N'pyuxpnp ibskdi{xDUiRxsz6msFT7_&#$!~<|+b,t#yhn$d6', SID = 0x28705C6C50FD2947A8F0C39466CC2ED4, DEFAULT_DATABASE = [BDSeguridad], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

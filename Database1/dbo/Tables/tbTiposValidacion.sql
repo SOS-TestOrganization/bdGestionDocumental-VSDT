@@ -1,0 +1,76 @@
+﻿CREATE TABLE [dbo].[tbTiposValidacion] (
+    [cnsctvo_cdgo_tpo_vldcn] [dbo].[udtConsecutivo] NOT NULL,
+    [cdgo_tpo_vldcn]         CHAR (10)              NOT NULL,
+    [dscrpcn_tpo_vldcn]      [dbo].[udtDescripcion] NOT NULL,
+    [fcha_crcn]              DATETIME               NOT NULL,
+    [usro_crcn]              [dbo].[udtUsuario]     NOT NULL,
+    [vsble_usro]             [dbo].[udtLogico]      NOT NULL,
+    CONSTRAINT [PK_tbTiposValidacion] PRIMARY KEY CLUSTERED ([cnsctvo_cdgo_tpo_vldcn] ASC)
+);
+
+
+GO
+GRANT DELETE
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [GestionDocumental]
+    AS [dbo];
+
+
+GO
+GRANT INSERT
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [GestionDocumental]
+    AS [dbo];
+
+
+GO
+GRANT REFERENCES
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [GestionDocumental]
+    AS [dbo];
+
+
+GO
+GRANT SELECT
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [GestionDocumental]
+    AS [dbo];
+
+
+GO
+GRANT UPDATE
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [GestionDocumental]
+    AS [dbo];
+
+
+GO
+GRANT DELETE
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [Administrador Gestion Documental]
+    AS [dbo];
+
+
+GO
+GRANT INSERT
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [Administrador Gestion Documental]
+    AS [dbo];
+
+
+GO
+GRANT SELECT
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [Administrador Gestion Documental]
+    AS [dbo];
+
+
+GO
+GRANT UPDATE
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [Administrador Gestion Documental]
+    AS [dbo];
+
+
+GO
+GRANT SELECT
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [Administrador Digitalizadores Gestion Documental ]
+    AS [dbo];
+
+
+GO
+GRANT SELECT
+    ON OBJECT::[dbo].[tbTiposValidacion] TO [Unibase]
+    AS [dbo];
+

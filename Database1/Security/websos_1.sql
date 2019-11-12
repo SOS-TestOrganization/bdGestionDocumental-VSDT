@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [websos]
+    WITH PASSWORD = N'khgWbjssapo&zksebOs4eih5msFT7_&#$!~<ekcsh3%es&pF', SID = 0x44B4BA61A19EC84A9F8ED4A777902F36, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+
