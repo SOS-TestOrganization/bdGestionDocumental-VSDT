@@ -11,6 +11,7 @@ Set Nocount On
 Set			@cnsctvo_cdgo_dgtlzdr		=	2
 Set			@fcha_cnslta				=	'2009/07/24'
 Set			@cnsctvo_cdgo_tpo_dcmnto	=	1
+Set         @testcase = 'This is a Test Case'
 */
 
 
